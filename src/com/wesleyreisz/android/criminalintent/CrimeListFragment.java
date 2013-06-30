@@ -43,6 +43,12 @@ public class CrimeListFragment extends ListFragment {
 		toast.show();
 	}
 	
+	@Override
+	public void onResume() {
+		super.onResume();
+		((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+	}
+	
 	private class CrimeAdapter extends ArrayAdapter<Crime>{
 		public CrimeAdapter(List<Crime>crimes){
 			super(getActivity(),0,crimes);
