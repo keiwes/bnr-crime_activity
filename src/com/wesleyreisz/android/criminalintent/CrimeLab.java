@@ -16,14 +16,6 @@ public class CrimeLab {
 	private CrimeLab(Context appContext){
 		mAppContext = appContext;
 		mCrimes=new ArrayList<Crime>();
-		for(int i=0;i<100;i++){
-			Crime crime = new Crime();
-			crime.setTitle("Crime " + i);
-			if(i%2==0){
-				crime.setSolved(true);
-			}
-			mCrimes.add(crime);
-		}
 	}
 	public static CrimeLab get(Context c){
 		if(sCrimeLab == null){
@@ -41,5 +33,8 @@ public class CrimeLab {
 			}
 		}
 		return null;
+	}
+	public void addCrime(Crime c){
+		mCrimes.add(c);
 	}
 }
